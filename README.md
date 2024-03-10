@@ -33,4 +33,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # next-js-microblog
-# next-js-microblog
+
+pagesフォルダ内でルーティングは完結
+Reactの場合はDomとか必要
+
+#<a> ページをリロードする
+#<Link> リロードされない(高速)
+
+静的ファイルはpublicへ保存 
+パス指定の際もpublic以下から。/以下
+
+Headコンポーネント
+タブの文字やファビコン
