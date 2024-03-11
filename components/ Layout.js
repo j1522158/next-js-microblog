@@ -13,7 +13,7 @@ function  Layout({ children }) {
             </Head>
             <header className={styles.header}>
                 <img src="/images/profile.png" className={utilStyles.borderCircle}></img>
-                <h1>{name}</h1>
+                <h1 className={utilStyles.heading2Xl}>{name}</h1>
             </header>
             <main>{children}</main>
         </div>
