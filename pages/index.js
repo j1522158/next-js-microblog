@@ -9,7 +9,7 @@ import { getPostsData } from '../lib/post'
 // SSGの場合
 // ビルド時にデータを取得して、そのデータを元に静的なHTMLページを生成する
 export async function getStaticProps() {
-  const allPostsData = getPostsData(); // id, title, date thunmbnail
+  const allPostsData = await getPostsData(); // id, title, date thunmbnail
   console.log(allPostsData);
 
   return {
