@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Layout from "../../components/ Layout";
 import { getAllPostIds, getPostData } from "../../lib/post";
 import utilStyle from '../../styles/utils.module.css'
@@ -7,7 +8,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false,  // 上記のpathsに含まれていないページは404 NotFoundとなる
+        fallback: false,  // fallback = false : 上記のpathsに含まれていないページは404 NotFoundとなる
     };
 }
 
@@ -22,6 +23,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
+    const router = useRouter()
+    if(router.isFallback) {
+        return <div>読み込み中</div>
+    }
     return (
     <Layout>
         <article>
