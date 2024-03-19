@@ -33,7 +33,7 @@ export default function Home({allPostsData}) {
   <Layout>
     <section className={utilStyle.headingMd}>
       <p>
-        かけだしバックエンドエンジニア
+        かけだしエンジニア
       </p>
     </section>
 
