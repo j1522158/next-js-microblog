@@ -31,70 +31,21 @@ export default function Home({allPostsData}) {
 <section>
   <h2>エンジニアブログ</h2>
   <div className={styles.grid}>
-      <article>
-        <Link href="/">
-          <img src="/images/thumbnail01.jpg" 
-            className={styles.thumbnailImage}
-          />
-        </Link>
-        <Link legacyBehavior href="/">
-          <a className={utilStyle.boldText}>
-            ここに文字を入力
-          </a>
-        </Link>
-        <br />
-        <small className={utilStyle.ligthText}>
-          2024-03-12
-        </small>
-      </article>
-      <article>
-        <Link href="/">
-          <img src="/images/thumbnail01.jpg" 
-            className={styles.thumbnailImage}
-          />
-        </Link>
-        <Link legacyBehavior href="/">
-          <a className={utilStyle.boldText}>
-            ここに文字を入力
-          </a>
-        </Link>
-        <br />
-        <small className={utilStyle.ligthText}>
-          2024-03-12
-        </small>
-      </article>
-      <article>
-        <Link href="/">
-          <img src="/images/thumbnail01.jpg" 
-            className={styles.thumbnailImage}
-          />
-        </Link>
-        <Link legacyBehavior href="/">
-          <a className={utilStyle.boldText}>
-            ここに文字を入力
-          </a>
-        </Link>
-        <br />
-        <small className={utilStyle.ligthText}>
-          2024-03-12
-        </small>
-      </article>
-      <article>
-        <Link href="/">
-          <img src="/images/thumbnail01.jpg" 
-            className={styles.thumbnailImage}
-          />
-        </Link>
-        <Link legacyBehavior href="/">
-          <a className={utilStyle.boldText}>
-            ここに文字を入力
-          </a>
-        </Link>
-        <br />
-        <small className={utilStyle.ligthText}>
-          2024-03-12
-        </small>
-      </article>
+    {allPostsData.map(({id, title, date, thumbnail}) => (
+      <article key={id}>
+      <Link href={`/posts/${id}`}> 
+        <img 
+          src={`${thumbnail}`} 
+          className={styles.thumbnailImage}
+        />
+      </Link>
+      <Link legacyBehavior href={`/posts/${id}`}>
+        <a className={utilStyle.boldText}>{title}</a>
+      </Link>
+      <br />
+      <small className={utilStyle.ligthText}>{date}</small>
+    </article>
+    ))}
     </div>
 </section>
   </Layout>
