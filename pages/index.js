@@ -4,8 +4,22 @@ import styles from '../styles/Home.module.css'
 import Layout from '../components/ Layout'
 import Link from 'next/link'
 import utilStyle from '../styles/utils.module.css'
+import { getPostsData } from '../lib/post'
 
-export default function Home() {
+// SSGの場合
+// ビルド時にデータを取得して、そのデータを元に静的なHTMLページを生成する
+export async function getStaticProps() {
+  const allPostsData = getPostsData(); // id, title, date thunmbnail
+  console.log(allPostsData);
+
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({allPostsData}) {
   return (
   <Layout>
     <section className={utilStyle.headingMd}>
