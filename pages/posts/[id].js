@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../../components/ Layout";
 import { getAllPostIds, getPostData } from "../../lib/post";
@@ -29,6 +30,9 @@ export default function Post({ postData }) {
     }
     return (
     <Layout>
+        <Head>
+            <title>{postData.title}</title>
+        </Head>
         <article>
             <h1 className={utilStyle.headingX1}>{postData.title}</h1>
             <div className={utilStyle.lightText}>{postData.date}</div>
