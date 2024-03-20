@@ -30,7 +30,7 @@ export async function getStaticProps() {
 
 export default function Home({allPostsData}) {
   return (
-  <Layout>
+  <Layout home>
     <section className={utilStyle.headingMd}>
       <p>
         かけだしエンジニア
