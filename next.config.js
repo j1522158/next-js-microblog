@@ -4,4 +4,7 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  output: 'export',
+  // その他の設定
+}
