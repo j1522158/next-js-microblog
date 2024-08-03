@@ -36,7 +36,7 @@ export default function Home({allPostsData}) {
     </Head>
     <section className={utilStyle.headingMd}>
       <p>
-        かけだしエンジニア / Next.js勉強中
+        かけだしエンジニア / React & Next.js勉強中
       </p>
     </section>
 
